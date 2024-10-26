@@ -1,11 +1,10 @@
-
-import './App.css'
+import Page1 from "./pages/Page1"
 
 function App() {
 
   return (
     <>
-    <h1 className='font-[anzo1]'>Hello</h1>
+      <Page1/>
     </>
   )
 }
