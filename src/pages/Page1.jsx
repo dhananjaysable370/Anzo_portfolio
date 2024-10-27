@@ -1,5 +1,7 @@
 import { useRef, useState } from "react"
 import Page1Bottom from "../components/Page1Bottom"
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 // import TiltText from "../components/TiltText"
 
 function Page1() {
@@ -11,8 +13,17 @@ function Page1() {
   const mouseMoving = (e) => {
     setxVal((e.clientX - tiltRef.current.getBoundingClientRect().x - tiltRef.current.getBoundingClientRect().width/2)/20)
     setyVal(-(e.clientY - tiltRef.current.getBoundingClientRect().y - tiltRef.current.getBoundingClientRect().height/2)/10)
-    tiltRef.current.style.transform = `rotateX(${yVal}deg) rotateY(${xVal}deg)`
   }
+
+  useGSAP(function(){
+    gsap.to(tiltRef.current, {
+      transform: `rotateX(${yVal}deg) rotateY(${xVal}deg)`,
+      duration: 3,
+      ease: "elastic.out(1,0.7)",
+    })
+  }, [xVal, yVal])
+  
+  
   return (
     <div onMouseMove={(e) => {
       mouseMoving(e)
