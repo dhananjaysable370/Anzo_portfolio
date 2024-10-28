@@ -13,10 +13,14 @@
 }
 @font-face{
   font-family: anzo3;
-  src: url(./assets/file3.woff2);
+  src: url(./assets/file2.woff2);
 }
 @font-face{
   font-family: anzo4;
+  src: url(./assets/file3.woff2);
+}
+@font-face{
+  font-family: anzo5;
   src: url(./assets/madefor-text.var.original.woff2);
 }
 
@@ -24,6 +28,12 @@
   position: relative;
   perspective: 1000px;
 }
+
+#section2{
+  position: relative;
+  perspective: 3000px;
+}
+
 #tiltDiv{
   width: fit-content;
 }
